@@ -8,6 +8,7 @@ const DefaulTheme = {
         primary: "#2B7DC8",
         primaryDark: "#101A35",
         transparent:"#F3F3F3",
+        transparentColor:"rgba(243, 243, 243, 0.35)",
         //dashboard state
         dark:"#212121",
         enable:"#4DF071",

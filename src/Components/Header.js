@@ -4,17 +4,22 @@ import Icon from "react-native-vector-icons/FontAwesome"
 import DefaulTheme from "../constants/DefaultTheme"
 import { useNavigation } from "@react-navigation/core"
 const {header} = DefaulTheme.colors
-const Header = ({description})=>{
+const Header = ({description,showArrowBack})=>{
     const navigation = useNavigation()
     return(
        <View style={styles.container}>
-                <TouchableOpacity  onPress={()=>navigation.goBack()}>
-                <Icon
-                    style={styles.containerIcon} 
-                    name="chevron-left"
-                    size={22}
-                    />
-                    </TouchableOpacity><Text style={styles.title}> {description}</Text>
+           { showArrowBack ? 
+             <TouchableOpacity  onPress={()=>navigation.goBack()}>
+             <Icon
+                 style={styles.containerIcon} 
+                 name="chevron-left"
+                 size={20}
+                 />
+                 </TouchableOpacity>
+            :
+             null
+             }
+               <Text style={styles.title}> {description}</Text>
        </View>
     )
 }
@@ -32,15 +37,17 @@ const styles = StyleSheet.create({
         shadowRadius:3
     },
     containerIcon:{
-        marginLeft:10,
+        marginLeft:15,
         lineHeight:55,
         color:"white"
     },
     title:{
-        marginLeft:10,
+        fontFamily:"Quicksand-Bold",
         lineHeight:55,
+        textAlign:"center",
+        flex:1,
         color:"white",
-        fontSize:15
+        fontSize:16,
     }
 })
 export default Header;

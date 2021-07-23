@@ -1,4 +1,4 @@
-export default FONTNAME = {
+export const fontName = {
         QuicksandBold: "Quicksand-Bold",
         QuicksandLight: "Quicksand-Light",
         QuicksandMedium: "Quicksand-Medium",

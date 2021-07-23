@@ -18,11 +18,14 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigation from "./src/navigation"
+import LampContext from "./src/context/LampProvider"
 const App= ()=> {
   return (
+    <LampContext>
        <NavigationContainer>
          <Navigation/>
       </NavigationContainer>
+    </LampContext>
   );
 };
 

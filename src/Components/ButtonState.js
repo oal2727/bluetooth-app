@@ -4,6 +4,7 @@ import DefaulTheme from "../constants/DefaultTheme"
 import Icon from "react-native-vector-icons/FontAwesome"
 const {dark,enable,disable} = DefaulTheme.colors
 const ButtonState = ({active,onPress,containerStyle})=>{
+
     return(
         <TouchableOpacity onPress={onPress} style={containerStyle}>
             <View style={styles.buttonStyle}>
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     buttonStyle:{
         backgroundColor:dark,
         width:150,
-        height:30,
+        height:40,
         borderRadius:25
     },
     enable:{
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignSelf:"center",
         alignItems:"center",
-        lineHeight:30,
+        lineHeight:40,
         fontFamily:"Quicksand-SemiBold",
     },
     disable:{
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
         fontSize:17,
         justifyContent:"center",
         alignSelf:"center",
-        lineHeight:30,
+        lineHeight:40,
         fontFamily:"Quicksand-SemiBold",
     }
 

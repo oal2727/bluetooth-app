@@ -13,7 +13,10 @@ const ItemBox = ({description,onPress})=>{
                 <Icon
                     style={styles.containerIcon} 
                     name="bluetooth-b"
-                    /><Text style={styles.description}> {description}</Text>
+                    /><Text 
+                    numberOfLines={2}
+                    ellipsizeMode="tail"
+                    style={styles.description}>{description}</Text>
                 </View>
                 <TouchableOpacity style={styles.button} onPress={onPress}>
                     <Text style={styles.buttonText}>Conectar</Text>
@@ -26,7 +29,7 @@ const ItemBox = ({description,onPress})=>{
 const styles = StyleSheet.create({
     box:{
         marginTop:20,
-        height:47,
+        height:null,
         padding:6,
         width:width/1.1,
         alignSelf:"center",
@@ -42,32 +45,41 @@ const styles = StyleSheet.create({
     },
     container:{
         flexDirection:"row",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
+        marginLeft:10,
     },
     containerIcon:{
+        marginTop:5,
         backgroundColor:transparent,
-        width:30,
-        height:30,
-        fontSize:18,
+        width:35,
+        height:35,
+        fontSize:20,
         textAlign:"center",
         borderRadius:20,
-        lineHeight:27
+        lineHeight:33
     },
     description:{
         marginLeft:10,
-        fontSize:17
+        textAlign:"left",
+        fontSize:17,
+        paddingTop:4,
+        width:130,
+        height:50,
+        color:"white"
     },
     button:{
+        marginTop:10,
         backgroundColor:transparent,
-        width:80,
+        width:100,
         height:30,
         padding:5,
         marginRight:20,
-        borderRadius:10
+        borderRadius:10,
     },
     buttonText:{
         color:"black",
-        alignSelf:"center"
+        alignSelf:"center",
+        fontSize:14
     }
 })
 export default ItemBox;
