@@ -25,17 +25,6 @@ const BluetoothScreen = ()=>{
         }
     };
 
-    const data =[
-        {id:1,name:"raa"},
-        {id:2,name:"raa"},
-        {id:3,name:"raa"},
-        {id:4,name:"raa"},
-        {id:5,name:"raa"},
-        {id:6,name:"raa"},
-        {id:7,name:"raa"},
-        
-    ]
-
     const enable= ()=>{
         setModal(true)
         BluetoothSerial.enable().then((res)=>{
@@ -118,9 +107,11 @@ const BluetoothScreen = ()=>{
             </View>
             <View style={styles.line}/>
             <ScrollView style={{marginBottom:15}}>
-            {
+          
+  {
+                lamp.hosts.length ? 
                 
-                data.map((item,index)=>{
+                lamp.hosts.map((item,index)=>{
                     return(
                         <ItemBox 
                         key={item.id}
@@ -129,6 +120,7 @@ const BluetoothScreen = ()=>{
                         />
                     )
                 })
+                : <Text style={styles.message}>No hay Dispositivos Disponibles...</Text>
             }
             </ScrollView>
             {/* <ScanDevices
