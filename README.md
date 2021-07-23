@@ -1,8 +1,12 @@
 # Proyecto Lampara:
 
-Codigo Arduino:
+Imagen Proyecto:
 
-``
+![AppLamp_Estructura_bb](https://user-images.githubusercontent.com/41652885/126735611-682a077c-583f-4669-8646-2b45e67440e7.png)
+
+
+Codigo Arduino:
+```
   #include <SoftwareSerial.h>
   // You should get Auth Token in the Blynk App.
   // Go to the Project Settings (nut icon).
@@ -29,4 +33,4 @@ Codigo Arduino:
 
 
   }
-``
+```
