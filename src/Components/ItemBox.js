@@ -28,7 +28,7 @@ const ItemBox = ({description,onPress})=>{
 }
 const styles = StyleSheet.create({
     box:{
-        marginTop:20,
+        marginTop:25,
         height:null,
         padding:6,
         width:width/1.1,

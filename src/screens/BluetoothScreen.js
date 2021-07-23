@@ -1,5 +1,5 @@
 import React,{useState,useContext} from "react"
-import {Text,View,Switch,StyleSheet,Dimensions,Alert, FlatList} from "react-native"
+import {Text,View,Switch,StyleSheet,Dimensions,Alert, ScrollView,FlatList} from "react-native"
 import BluetoothSerial from "react-native-bluetooth-serial-next"
 import Header from "../Components/Header"
 import ItemBox from "../Components/ItemBox"
@@ -24,6 +24,17 @@ const BluetoothScreen = ()=>{
             disable()
         }
     };
+
+    const data =[
+        {id:1,name:"raa"},
+        {id:2,name:"raa"},
+        {id:3,name:"raa"},
+        {id:4,name:"raa"},
+        {id:5,name:"raa"},
+        {id:6,name:"raa"},
+        {id:7,name:"raa"},
+        
+    ]
 
     const enable= ()=>{
         setModal(true)
@@ -106,10 +117,10 @@ const BluetoothScreen = ()=>{
                 <SwitchButton/>
             </View>
             <View style={styles.line}/>
+            <ScrollView style={{marginBottom:15}}>
             {
-                lamp.hosts.length ? 
                 
-                lamp.hosts.map((item,index)=>{
+                data.map((item,index)=>{
                     return(
                         <ItemBox 
                         key={item.id}
@@ -118,8 +129,8 @@ const BluetoothScreen = ()=>{
                         />
                     )
                 })
-                : <Text style={styles.message}>No hay Dispositivos Disponibles...</Text>
             }
+            </ScrollView>
             {/* <ScanDevices
             onPress={()=>searchDevice()}/> */}
         </View>
